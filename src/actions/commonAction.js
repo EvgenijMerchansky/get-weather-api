@@ -8,14 +8,13 @@ export const test = (arg) => {
       key: 'a4fc0f9419419e1b36361fd1f44d3c603e5a1be2',
       headers:
         {
-        'Access-Control-Allow-Origin' : 'http://weather.yahooapis.com',
+        // 'Access-Control-Allow-Origin' : 'http://weather.yahooapis.com',
         // 'X-Requested-With': 'XMLHttpRequest',
         }
       // params: {
       //   // city: location,
       // }
     }).then(response => {
-      const title = response.data.query.results.channel.item;
       // - - - -
       // const data = response.data.query.results.channel.item;
       // const total = {
@@ -25,7 +24,8 @@ export const test = (arg) => {
       // - - - -
       dispatch({
         type: 'TEST',
-        payload: title
+        payloadTitle: response.data.query.results.channel.item.condition,
+        title: arg
       })
     })
   }
