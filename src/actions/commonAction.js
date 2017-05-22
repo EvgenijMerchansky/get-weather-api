@@ -22,10 +22,13 @@ export const test = (arg) => {
       //   data: data
       // }
       // - - - -
+      const genDel = arg.charAt(0).toUpperCase();
+      const sl = arg.slice(1,20);
+      const totalString = genDel + sl;
       dispatch({
         type: 'TEST',
         payloadTitle: response.data.query.results.channel.item.condition,
-        title: arg
+        title: totalString
       })
     })
   }
